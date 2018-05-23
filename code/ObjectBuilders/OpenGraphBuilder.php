@@ -198,7 +198,13 @@ class OpenGraphBuilder extends Object implements IOpenGraphObjectBuilder
 		$this->AppendTag($tags, 'og:title', $object->getOGTitle());
 		$this->AppendTag($tags, 'og:type', $object->getOGType());
 		$this->AppendTag($tags, 'og:url', $object->AbsoluteLink());
+		// image
 		$this->appendMediaMetaTags($tags, 'og:image', $object->getOGImage());
+
+		if(is_string($object->getOGImage())) {
+            $this->AppendTag($tags, 'og:image:height', $object->getOGImageHeight());
+            $this->AppendTag($tags, 'og:image:width', $object->getOGImageWidth());
+        }
 
 		// Media fields
 		$this->appendMediaMetaTags($tags, 'og:audio', $object->getOGAudio());

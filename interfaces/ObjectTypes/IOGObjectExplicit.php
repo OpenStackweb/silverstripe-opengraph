@@ -49,4 +49,5 @@ interface IOGObjectExplicit extends IOGObjectRequired
 	 * @return string The site name 
 	 */
 	function getOGSiteName();
+
 }

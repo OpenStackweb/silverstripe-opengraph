@@ -105,6 +105,24 @@ class OpenGraphObjectExtension extends SiteTreeExtension implements IOGObjectExp
 			return Director::absoluteURL(self::$default_image);
 	}
 
+	// default values
+	const OGIMAGEDefaultHeight = 135;
+    const OGIMAGEDefaultWidth  = 240;
+
+    /**
+     * @return int
+     */
+	public function getOGImageHeight(){
+	    return self::OGIMAGEDefaultHeight;
+    }
+
+    /**
+     * @return int
+     */
+    public function getOGImageWidth(){
+        return self::OGIMAGEDefaultWidth;
+    }
+
 	public function AbsoluteLink()
 	{
 		// Left blank by default. Implement this in the decorated class to determine correct value
